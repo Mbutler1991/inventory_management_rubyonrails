@@ -1,0 +1,10 @@
+<h1><%= @item.name %></h1>
+
+<%#display how much of each item is in stock along with category group and supplier of the item%>
+<p><strong>Quantity:</strong> <%= @item.quantity %></p>
+<p><strong>Category:</strong> <%= @item.category.name %></p>
+<p><strong>Supplier:</strong> <%= @item.supplier.name %></p>
+
+<%#links to edit the item or to go back to list of items%>
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
