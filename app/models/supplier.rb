@@ -1,2 +1,3 @@
 class Supplier < ApplicationRecord
-end
+    has_many :items
+  end
