@@ -1,0 +1,11 @@
+<h1>Inventory</h1>
+<%# set up a list of all inventory items %>
+<ul>
+    <%# iterate over each item %>
+  <% @items.each do |item| %>
+    <%# show a link to each item and quantity %>
+    <%= link_to "#{item.name} (Quantity: #{item.quantity})", item %>
+  <% end %>
+</ul>
+<%# link to create a new item %>
+<%= link_to 'New Item', new_item_path %>
