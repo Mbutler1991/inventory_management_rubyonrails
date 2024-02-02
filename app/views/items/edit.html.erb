@@ -1,29 +1,29 @@
 <h1>Edit Item</h1>
 <%#form to edit an item that already exists in the database%>
 <%= form_with(model: @item, local: true) do |form| %>
-  <div>
+  <div class='form-field'>
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
+  <div class='form-field'>
     <%= form.label :quantity %>
     <%= form.number_field :quantity %>
   </div>
 
-  <div>
+  <div class='form-field'>
     <%= form.label :category_id %>
     <%= form.collection_select :category_id, Category.all, :id, :name %>
   </div>
 
-  <div>
+  <div class='form-field'>
     <%= form.label :supplier_id %>
     <%= form.collection_select :supplier_id, Supplier.all, :id, :name %>
   </div>
 
-  <div>
-    <%= form.submit 'Update Item' %>
+  <div class='button-center'>
+    <%= form.submit 'Update Item', class: 'button-small' %>
   </div>
 <% end %>
 
-<%= link_to 'Back', item_path(@item) %>
+<%= link_to 'Back', item_path(@item), class: 'button' %>

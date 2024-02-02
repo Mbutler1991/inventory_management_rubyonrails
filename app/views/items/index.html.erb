@@ -4,8 +4,12 @@
     <%# iterate over each item %>
   <% @items.each do |item| %>
     <%# show a link to each item and quantity %>
-    <%= link_to "#{item.name} (Quantity: #{item.quantity})", item %>
+    <ul>
+      <li>
+        <%= link_to "#{item.name} (Quantity: #{item.quantity})", item %>
+      </li>
+    </ul>
   <% end %>
 </ul>
 <%# link to create a new item %>
-<%= link_to 'New Item', new_item_path %>
+<%= link_to 'New Item', new_item_path, class: 'button' %>

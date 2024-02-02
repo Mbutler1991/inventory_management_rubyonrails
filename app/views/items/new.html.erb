@@ -3,29 +3,29 @@
 <%# a form to add a new item to the database%>
 <%= form_with(model: @item, local: true) do |form| %>
     <%# area to input the name of the item%>
-  <div>
+  <div class='form-field'>
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
     <%# area to input how much you have of the item%>
-  <div>
+  <div class='form-field'>
     <%= form.label :quantity %>
     <%= form.number_field :quantity %>
   </div>
     <%# area to input the category of the item from a dropdown of all category groups%>
-  <div>
+  <div class='form-field'>
     <%= form.label :category_id %>
     <%= form.collection_select :category_id, Category.all, :id, :name %>
   </div>
     <%# area to input the supplier of the item from a dropdown of all suppliers%>
-  <div>
+  <div class='form-field'>
     <%= form.label :supplier_id %>
     <%= form.collection_select :supplier_id, Supplier.all, :id, :name %>
   </div>
     <%#button to add the item%>
-  <div>
-    <%= form.submit 'Add Item' %>
+  <div class='button-center'>
+    <%= form.submit 'Add Item', class: 'button-small' %>
   </div>
 <% end %>
 <%#link to go back to the list of items%>
-<%= link_to 'Back', items_path %>
+<%= link_to 'Back', items_path, class: 'button' %>

@@ -4,9 +4,9 @@
   <% @suppliers.each do |supplier| %>
     <li>
         <%= supplier.name %>
-        <%= link_to "Edit", edit_supplier_path(supplier) %>
+        <%= link_to "Edit", edit_supplier_path(supplier), class: 'button-small' %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to "New Supplier", new_supplier_path %>
+<%= link_to "New Supplier", new_supplier_path, class: 'button' %>

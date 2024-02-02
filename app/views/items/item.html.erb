@@ -6,5 +6,5 @@
 <p><strong>Supplier:</strong> <%= @item.supplier.name %></p>
 
 <%#links to edit the item or to go back to list of items%>
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Edit', edit_item_path(@item), class: 'button' %> |
+<%= link_to 'Back', items_path, class: 'button' %>

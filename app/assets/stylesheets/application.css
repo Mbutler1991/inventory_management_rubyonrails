@@ -4,16 +4,17 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
     justify-content: center;
+    background-color: #f0f0f0;
 }
 label{
     align-self: flex-start;
 }
 
 input {
-    float: right;
+    margin-right: 0;
 }
 
-submit {
+form.submit {
     align-self: center;
 }
 
@@ -21,10 +22,57 @@ h1 {
     text-decoration: underline;
 }
 
+ul {
+    border: 1px solid black;
+    padding: 10px;
+}
+
 li {
     display: block;
+    margin-bottom: 10px;
+}
+
+li a {
+    text-decoration: none;
+    color: red;
 }
 
 form {
+    display: block;
     border: 1px solid black;
+    width: 40%;
+    padding: 2px;
+}
+
+.form-field {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.button, .button-small {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+  
+  .button:hover, .button-small:hover {
+    background-color: #0056b3;
+}
+
+  .button-small {
+    padding: 5px 10px;
+}
+
+  .button {
+    margin-top: 40px;
+}
+
+  .button-center {
+    text-align: center;
 }
