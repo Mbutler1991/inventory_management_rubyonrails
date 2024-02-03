@@ -1,18 +1,4 @@
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-development:
-  <<: *default
-  database: inventory_management_development
-
-test:
-  <<: *default
-  database: inventory_management_test
-
-production:
-  <<: *default
-  database: inventory_management_production
-  username: postgres
-  password: <%= ENV['M1tt3n5th3k1tt3n!'] %>
+/config/database.yml
+/config/secrets.yml
+/config/application.yml  # If you use the Figaro gem for configuration
+/config/master.key   

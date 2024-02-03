@@ -3261,3 +3261,198 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 9533ms (Views: 8394.1ms | ActiveRecord: 11.0ms | Allocations: 46485)
 
 
+Started GET "/" for 127.0.0.1 at 2024-02-03 09:49:06 +0000
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (8.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:5
+  Rendered items/index.html.erb within layouts/application (Duration: 779.2ms | Allocations: 3601)
+  Rendered layout layouts/application.html.erb (Duration: 921.2ms | Allocations: 5273)
+Completed 200 OK in 1165ms (Views: 1015.0ms | ActiveRecord: 87.0ms | Allocations: 5568)
+
+
+Started GET "/" for 127.0.0.1 at 2024-02-03 09:49:13 +0000
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:5
+  Rendered items/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 628)
+  Rendered layout layouts/application.html.erb (Duration: 87.5ms | Allocations: 2273)
+Completed 200 OK in 113ms (Views: 95.5ms | ActiveRecord: 0.7ms | Allocations: 2567)
+
+
+Started GET "/categories" for 127.0.0.1 at 2024-02-03 09:49:16 +0000
+Processing by CategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (4.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:4
+  Rendered categories/index.html.erb within layouts/application (Duration: 107.2ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 141.8ms | Allocations: 2668)
+Completed 200 OK in 1285ms (Views: 181.3ms | ActiveRecord: 4.5ms | Allocations: 4386)
+
+
+Started GET "/categories/new" for 127.0.0.1 at 2024-02-03 09:49:25 +0000
+Processing by CategoriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 395.8ms | Allocations: 1904)
+  Rendered categories/new.html.erb within layouts/application (Duration: 496.4ms | Allocations: 2222)
+  Rendered layout layouts/application.html.erb (Duration: 529.4ms | Allocations: 3672)
+Completed 200 OK in 740ms (Views: 537.6ms | ActiveRecord: 84.2ms | Allocations: 6956)
+
+
+Started POST "/categories" for 127.0.0.1 at 2024-02-03 09:49:35 +0000
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Consumables"}, "commit"=>"Create Category"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:15:in `create'
+  [1m[36mCategory Create (13.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Consumables"], ["created_at", "2024-02-03 09:49:35.425241"], ["updated_at", "2024-02-03 09:49:35.425241"]]
+  ↳ app/controllers/categories_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/categories/1
+Completed 302 Found in 488ms (ActiveRecord: 20.9ms | Allocations: 3876)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2024-02-03 09:49:36 +0000
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:33:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 48.8ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 75.9ms | Allocations: 1924)
+Completed 200 OK in 137ms (Views: 83.5ms | ActiveRecord: 1.4ms | Allocations: 4568)
+
+
+Started GET "/suppliers" for 127.0.0.1 at 2024-02-03 09:49:39 +0000
+Processing by SuppliersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/index.html.erb within layouts/application
+  [1m[36mSupplier Load (3.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/views/suppliers/index.html.erb:4
+  Rendered suppliers/index.html.erb within layouts/application (Duration: 73.9ms | Allocations: 920)
+  Rendered layout layouts/application.html.erb (Duration: 93.9ms | Allocations: 2671)
+Completed 200 OK in 288ms (Views: 190.9ms | ActiveRecord: 3.1ms | Allocations: 4049)
+
+
+Started GET "/suppliers/new" for 127.0.0.1 at 2024-02-03 09:49:41 +0000
+Processing by SuppliersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/new.html.erb within layouts/application
+  Rendered suppliers/_form.html.erb (Duration: 33.0ms | Allocations: 1085)
+  Rendered suppliers/new.html.erb within layouts/application (Duration: 74.6ms | Allocations: 1371)
+  Rendered layout layouts/application.html.erb (Duration: 99.9ms | Allocations: 2821)
+Completed 200 OK in 136ms (Views: 107.4ms | ActiveRecord: 5.5ms | Allocations: 4333)
+
+
+Started POST "/suppliers" for 127.0.0.1 at 2024-02-03 09:49:47 +0000
+Processing by SuppliersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "supplier"=>{"name"=>"Henry Schein"}, "commit"=>"Create Supplier"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/suppliers_controller.rb:15:in `create'
+  [1m[36mSupplier Create (2.2ms)[0m  [1m[32mINSERT INTO "suppliers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Henry Schein"], ["created_at", "2024-02-03 09:49:48.632493"], ["updated_at", "2024-02-03 09:49:48.632493"]]
+  ↳ app/controllers/suppliers_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/suppliers_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/suppliers/1
+Completed 302 Found in 74ms (ActiveRecord: 3.5ms | Allocations: 2599)
+
+
+Started GET "/suppliers/1" for 127.0.0.1 at 2024-02-03 09:49:48 +0000
+Processing by SuppliersController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/suppliers_controller.rb:33:in `set_supplier'
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/show.html.erb within layouts/application
+  Rendered suppliers/show.html.erb within layouts/application (Duration: 113.2ms | Allocations: 251)
+  Rendered layout layouts/application.html.erb (Duration: 144.8ms | Allocations: 1891)
+Completed 200 OK in 191ms (Views: 155.0ms | ActiveRecord: 0.6ms | Allocations: 3293)
+
+
+Started GET "/items" for 127.0.0.1 at 2024-02-03 09:50:02 +0000
+Started GET "/items" for 127.0.0.1 at 2024-02-03 09:50:02 +0000
+Processing by ItemsController#index as HTML
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:5
+  Rendered items/index.html.erb within layouts/application (Duration: 53.4ms | Allocations: 1694)
+  Rendered layout layouts/application.html.erb (Duration: 272.7ms | Allocations: 3347)
+Completed 200 OK in 373ms (Views: 319.9ms | ActiveRecord: 0.8ms | Allocations: 4178)
+
+
+  [1m[36mItem Load (4.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:5
+  Rendered items/index.html.erb within layouts/application (Duration: 441.6ms | Allocations: 6429)
+  Rendered layout layouts/application.html.erb (Duration: 468.6ms | Allocations: 8080)
+Completed 200 OK in 506ms (Views: 447.9ms | ActiveRecord: 37.1ms | Allocations: 8455)
+
+
+Started GET "/items" for 127.0.0.1 at 2024-02-03 09:50:04 +0000
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:5
+  Rendered items/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 621)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 2254)
+Completed 200 OK in 39ms (Views: 30.0ms | ActiveRecord: 0.5ms | Allocations: 2544)
+
+
+Started GET "/items/new" for 127.0.0.1 at 2024-02-03 09:50:05 +0000
+Processing by ItemsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/new.html.erb within layouts/application
+  [1m[36mCategory Load (2.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/items/new.html.erb:18
+  [1m[36mSupplier Load (15.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/views/items/new.html.erb:23
+  Rendered items/new.html.erb within layouts/application (Duration: 1050.2ms | Allocations: 10953)
+  Rendered layout layouts/application.html.erb (Duration: 1088.7ms | Allocations: 12403)
+Completed 200 OK in 1174ms (Views: 1100.4ms | ActiveRecord: 41.5ms | Allocations: 15775)
+
+
+Started POST "/items" for 127.0.0.1 at 2024-02-03 09:50:13 +0000
+Processing by ItemsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "item"=>{"name"=>"Gauze", "quantity"=>"1000", "category_id"=>"1", "supplier_id"=>"1"}, "commit"=>"Add Item"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/items_controller.rb:20:in `create'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:20:in `create'
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:20:in `create'
+  [1m[36mItem Create (12.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "quantity", "created_at", "updated_at", "category_id", "supplier_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gauze"], ["quantity", 1000], ["created_at", "2024-02-03 09:50:14.580164"], ["updated_at", "2024-02-03 09:50:14.580164"], ["category_id", 1], ["supplier_id", 1]]
+  ↳ app/controllers/items_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/items_controller.rb:20:in `create'
+Redirected to http://127.0.0.1:3000/items/1
+Completed 302 Found in 603ms (ActiveRecord: 24.5ms | Allocations: 8178)
+
+
+Started GET "/items/1" for 127.0.0.1 at 2024-02-03 09:50:14 +0000
+Processing by ItemsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:38:in `set_item'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:15
+  [1m[36mSupplier Load (3.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:20
+  Rendered items/show.html.erb within layouts/application (Duration: 100.4ms | Allocations: 1734)
+  Rendered layout layouts/application.html.erb (Duration: 153.6ms | Allocations: 3380)
+Completed 200 OK in 210ms (Views: 167.6ms | ActiveRecord: 4.6ms | Allocations: 5274)
+
+
