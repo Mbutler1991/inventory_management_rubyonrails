@@ -3,7 +3,7 @@
 <ul>
   <% @suppliers.each do |supplier| %>
     <li>
-        <%= supplier.name %>
+        <%= link_to supplier.name, supplier_path(supplier) %>
         <%= link_to "Edit", edit_supplier_path(supplier), class: 'button-small' %>
     </li>
   <% end %>
