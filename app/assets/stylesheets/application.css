@@ -4,7 +4,8 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
     justify-content: center;
-    background-color: #f0f0f0;
+    background-color: #707B7C;
+    padding-top: 60px;
 }
 label{
     align-self: flex-start;
@@ -30,11 +31,12 @@ ul {
 li {
     display: block;
     margin-bottom: 10px;
+    color: white;
 }
 
 li a {
     text-decoration: none;
-    color: red;
+    color: white;
 }
 
 form {
@@ -61,18 +63,58 @@ form {
     transition: background-color 0.3s ease;
 }
   
-  .button:hover, .button-small:hover {
+.button:hover, .button-small:hover {
     background-color: #0056b3;
 }
 
-  .button-small {
+.button-small {
     padding: 5px 10px;
 }
 
-  .button {
+.button {
     margin-top: 40px;
 }
 
-  .button-center {
+.button-center {
     text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+}
+
+.nav-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    background: linear-gradient(to right, white, #f0f0f0, #a9a9a9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.nav-links a {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+  
+.nav-links a.active {
+    font-weight: bold;
+    text-decoration: underline;
 }

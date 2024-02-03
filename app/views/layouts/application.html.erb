@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <nav>
+      <div class="nav-title">Inventory Management</div>
+      <ul class="nav-links">
+        <li>
+          <%= link_to 'Items', items_path, class: active_class(items_path) %>
+        </li>
+        <li>
+          <%= link_to 'Categories', categories_path, class: active_class(categories_path) %>
+        </li>
+        <li>
+          <%= link_to 'Suppliers', suppliers_path, class: active_class(suppliers_path) %>
+        </li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
