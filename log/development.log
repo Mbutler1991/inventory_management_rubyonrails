@@ -3816,3 +3816,122 @@ Migrating to AddPhoneAndEmailToSuppliers (20240203115503)
   [1m[36mActiveRecord::InternalMetadata Load (7.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (5.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2502133527568610460)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-02-03 12:00:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (10.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:5
+  Rendered items/index.html.erb within layouts/application (Duration: 129.3ms | Allocations: 5994)
+  Rendered layout layouts/application.html.erb (Duration: 1078.1ms | Allocations: 38506)
+Completed 200 OK in 1365ms (Views: 1079.9ms | ActiveRecord: 51.4ms | Allocations: 44721)
+
+
+Started GET "/suppliers" for 127.0.0.1 at 2024-02-03 12:00:54 +0000
+Processing by SuppliersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/index.html.erb within layouts/application
+  [1m[36mSupplier Load (3.9ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/views/suppliers/index.html.erb:4
+  Rendered suppliers/index.html.erb within layouts/application (Duration: 23.4ms | Allocations: 3542)
+  Rendered layout layouts/application.html.erb (Duration: 103.9ms | Allocations: 5282)
+Completed 200 OK in 206ms (Views: 118.2ms | ActiveRecord: 10.5ms | Allocations: 7068)
+
+
+Started GET "/suppliers/1/edit" for 127.0.0.1 at 2024-02-03 12:01:01 +0000
+Processing by SuppliersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSupplier Load (0.8ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/suppliers_controller.rb:33:in `set_supplier'
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/edit.html.erb within layouts/application
+  Rendered suppliers/_form.html.erb (Duration: 78.2ms | Allocations: 2551)
+  Rendered suppliers/edit.html.erb within layouts/application (Duration: 140.6ms | Allocations: 2865)
+  Rendered layout layouts/application.html.erb (Duration: 154.8ms | Allocations: 4309)
+Completed 200 OK in 198ms (Views: 160.7ms | ActiveRecord: 1.4ms | Allocations: 6987)
+
+
+Started PATCH "/suppliers/1" for 127.0.0.1 at 2024-02-03 12:01:24 +0000
+Processing by SuppliersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "supplier"=>{"name"=>"Henry Schein", "phone_number"=>"07823456543", "email"=>"test@test.test"}, "commit"=>"Update Supplier", "id"=>"1"}
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/suppliers_controller.rb:33:in `set_supplier'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/suppliers_controller.rb:23:in `update'
+  [1m[36mSupplier Update (19.0ms)[0m  [1m[33mUPDATE "suppliers" SET "updated_at" = $1, "phone_number" = $2, "email" = $3 WHERE "suppliers"."id" = $4[0m  [["updated_at", "2024-02-03 12:01:24.272791"], ["phone_number", "07823456543"], ["email", "test@test.test"], ["id", 1]]
+  ↳ app/controllers/suppliers_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/suppliers_controller.rb:23:in `update'
+Redirected to http://127.0.0.1:3000/suppliers/1
+Completed 302 Found in 72ms (ActiveRecord: 24.4ms | Allocations: 4453)
+
+
+Started GET "/suppliers/1" for 127.0.0.1 at 2024-02-03 12:01:24 +0000
+Processing by SuppliersController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/suppliers_controller.rb:33:in `set_supplier'
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/show.html.erb within layouts/application
+  Rendered suppliers/show.html.erb within layouts/application (Duration: 184.3ms | Allocations: 290)
+  Rendered layout layouts/application.html.erb (Duration: 203.7ms | Allocations: 1968)
+Completed 200 OK in 222ms (Views: 207.5ms | ActiveRecord: 0.5ms | Allocations: 2826)
+
+
+Started GET "/suppliers" for 127.0.0.1 at 2024-02-03 12:01:31 +0000
+Started GET "/suppliers" for 127.0.0.1 at 2024-02-03 12:01:32 +0000
+Processing by SuppliersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/index.html.erb within layouts/application
+  [1m[36mSupplier Load (1.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/views/suppliers/index.html.erb:4
+  Rendered suppliers/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 700)
+  Rendered layout layouts/application.html.erb (Duration: 92.6ms | Allocations: 2367)
+Completed 200 OK in 116ms (Views: 99.2ms | ActiveRecord: 1.0ms | Allocations: 2665)
+
+
+Processing by SuppliersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/index.html.erb within layouts/application
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/views/suppliers/index.html.erb:4
+  Rendered suppliers/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 707)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 2351)
+Completed 200 OK in 39ms (Views: 16.9ms | ActiveRecord: 0.6ms | Allocations: 2646)
+
+
+Started GET "/suppliers" for 127.0.0.1 at 2024-02-03 12:04:22 +0000
+Processing by SuppliersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/index.html.erb within layouts/application
+  [1m[36mSupplier Load (19.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/views/suppliers/index.html.erb:4
+  Rendered suppliers/index.html.erb within layouts/application (Duration: 266.2ms | Allocations: 969)
+  Rendered layout layouts/application.html.erb (Duration: 391.7ms | Allocations: 2962)
+Completed 200 OK in 488ms (Views: 425.5ms | ActiveRecord: 19.0ms | Allocations: 3783)
+
+
+Started GET "/suppliers" for 127.0.0.1 at 2024-02-03 12:04:28 +0000
+Processing by SuppliersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/index.html.erb within layouts/application
+  [1m[36mSupplier Load (1.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/views/suppliers/index.html.erb:4
+  Rendered suppliers/index.html.erb within layouts/application (Duration: 39.3ms | Allocations: 727)
+  Rendered layout layouts/application.html.erb (Duration: 166.1ms | Allocations: 2401)
+Completed 200 OK in 185ms (Views: 171.3ms | ActiveRecord: 1.3ms | Allocations: 2691)
+
+
+Started GET "/suppliers/1" for 127.0.0.1 at 2024-02-03 12:04:34 +0000
+Processing by SuppliersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSupplier Load (4.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/suppliers_controller.rb:33:in `set_supplier'
+  Rendering layout layouts/application.html.erb
+  Rendering suppliers/show.html.erb within layouts/application
+  Rendered suppliers/show.html.erb within layouts/application (Duration: 9.3ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 1939)
+Completed 200 OK in 110ms (Views: 49.1ms | ActiveRecord: 4.4ms | Allocations: 2757)
+
+
