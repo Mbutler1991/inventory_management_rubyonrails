@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_02_02_105223) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -22,8 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_02_105223) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "category_id", null: false
-    t.integer "supplier_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "supplier_id", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["supplier_id"], name: "index_items_on_supplier_id"
   end
