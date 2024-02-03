@@ -92,6 +92,8 @@ nav {
 
 .nav-title {
     font-size: 2em;
+    margin: auto;
+    padding: auto;
     font-weight: bold;
     background: linear-gradient(to right, white, #f0f0f0, #a9a9a9);
     -webkit-background-clip: text;
